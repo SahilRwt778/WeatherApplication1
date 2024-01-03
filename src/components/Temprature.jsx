@@ -11,6 +11,7 @@ import wind from '../images/wind.png'
 
 
 
+
 export default function Temprature() {
   const [city, setCity] = useState(null);
   const [search, setSearch] = useState('mumbai');
@@ -75,10 +76,12 @@ export default function Temprature() {
     imgpath=clouds
   }
 
+  
   return (
 
-    <>
+    
     <div className="box">
+      
       <div className="inputData">
         <input type="search" className="inputFeild" 
          placeholder="Enter City Name"
@@ -100,16 +103,13 @@ export default function Temprature() {
         
       </div>
 
-{ !city? (
-  
-  <h2 className="error"><i className="fa fa-exclamation-triangle" aria-hidden="true"></i>City Not Found</h2>
- 
-) : (
-  <>
+{city? (
+<>
   <div className="info">
         <h2 className="location">
           <i className="fa fa-street-view" aria-hidden="true"></i>
-          {invalue}
+          {invalue}<p>{ city.sys.country}</p>
+          
         </h2>
         <h1 className="temp"> {city.main.temp}° Cel</h1>
         <h3 className="tempin-max"> Min :{city.main.temp_min}° Cel / Max : {city.main.temp_max}° Cel</h3>
@@ -135,10 +135,9 @@ export default function Temprature() {
       </div>
       </div>
       </>
-)
+ 
+) : (<h2 className="error"><i className="fa fa-exclamation-triangle" aria-hidden="true"></i></h2>)
 }
-
-      
     </div>
-    </>
-  )}
+    
+)}

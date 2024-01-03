@@ -6,7 +6,6 @@
     font-family: 'Jost', sans-serif;
 }
 body{
-    background-image: url('src/images/background.jpg');
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
@@ -98,7 +97,7 @@ html{
 }
 .tempin-max{
     font-weight: 600;
-    margin-top: 40px;
+    margin-top: 5px;
     color: solid black;
 }
 .error{
@@ -107,6 +106,9 @@ html{
 .location{
     font-weight: 600;
     text-transform: uppercase;
+}
+.temp{
+    margin-top: -25px;
 }
 
 @keyframes drift {
